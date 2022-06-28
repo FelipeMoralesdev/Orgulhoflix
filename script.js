@@ -35,8 +35,58 @@ listaFilmes = [filme1, filme2, filme3, filme4, filme5, filme6, filme7, filme8, f
 var capas = document.getElementById("capas");
 var nomeiaCapas = "";
 
+//codando...
+for (let j = 0; j < listaFilmes.length; j++) {
+  listaFilmes[j].index = j+1;
+}
+
 for (var i = 0; i < listaFilmes.length; i++) {
-  nomeiaCapas += ("<img src=" + (listaFilmes[i].capa) + ">&nbsp&nbsp&nbsp");
+  nomeiaCapas += ("<div class='movie' data-index=" + listaFilmes[i].index +" > <img src=" + (listaFilmes[i].capa) + "></div>");
 }
 
 capas.innerHTML = nomeiaCapas;
+
+var filmesObjeto =  document.getElementsByClassName("movie");
+
+for (let j = 0; j < filmesObjeto.length; j++) {
+  filmesObjeto[j].addEventListener('click', getIndex);
+}
+
+function getIndex () {
+  let index = this.getAttribute('data-index');
+  let film;
+  for(let j = 0; j < listaFilmes.length; j++) {
+    if(index == listaFilmes[j].index) {
+      film = listaFilmes[j];
+      break;
+    }
+  }
+  mostrarInfos(film);
+}
+
+function mostrarInfos (film) {
+  let dataWrapper = document.getElementById('data-movie');
+  let dataInfos = document.getElementById('movie-infos');
+  let dataImage = document.getElementById('movie-image');
+
+  dataImage.innerHTML = ("<img src=" + film.capa+ ">");
+
+  dataInfos.children[0].innerHTML = film.nome;
+  dataInfos.children[1].innerHTML = ("<b>Título original: </b>"+ film.titulooriginal);
+  dataInfos.children[2].innerHTML = ("<b>Pais: </b> " + film.pais);
+  dataInfos.children[3].innerHTML = ("<b>Ano: </b>" + film.ano);
+  dataInfos.children[4].innerHTML = ("<b>Nota: </b>" + film.nota);
+  dataInfos.children[5].innerHTML = ("<b>Sinopse: </b>" + film.sinopse);
+
+  dataWrapper.classList.remove('hide-data');
+  document.getElementsByTagName('body')[0].style.overflow = "hidden";
+}
+
+let closeBtn = document.getElementById('close-button');
+closeBtn.addEventListener('click', esconderInfos );
+
+function esconderInfos() {
+  let dataWrapper = document.getElementById('data-movie');
+  dataWrapper.classList.add('hide-data');
+  document.getElementsByTagName('body')[0].style.overflow = "scroll";
+}

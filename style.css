@@ -1,18 +1,18 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");
 
-body{
+body {
     background: linear-gradient(to right, #33ccff 0%, #ff99cc 100%);
     text-align: center; 
     color: #f6f6f6;
     font-family: "Roboto", sans-serif;
 }
 
-h2{
+h2 {
     font-style: italic;
     height: 200;
 }
 
-.busca-e-selecoes{
+.busca-e-selecoes {
     display: flex;
     align-items: baseline;
     flex-direction: row;
@@ -21,10 +21,62 @@ h2{
 
 }
 
-#buscaNome{
+#buscaNome {
     align-items: center;
 }
 
-h3{
+h3 {
     text-shadow: 0.1em 0.1em #333
+}
+
+/* estilizando */
+.movie {
+    display: inline-block;
+    width: 33.33%;
+}
+
+#data-movie {
+    width: 80vw;
+    height: 70vh;
+    background-color: #191818c9;
+    position: fixed;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.close-btn-wrapper {
+    display: flex;
+    justify-content: end;
+    margin-right: 10px;
+    margin-top: 5px;
+}
+
+.close-button {
+    color: white;
+    font-size: 24px;
+}
+
+.movie-wrapper {
+    display: flex;
+    padding: 15px;
+}
+
+.movie-infos {
+    padding-left: 24px;
+    text-align: left;
+    background-color: #19181896;
+    padding-right: 24px;
+    font-size: 19px;
+}
+
+.movie-resume {
+    text-align: justify;
+}
+
+.hide-data {
+    display: none;
+}
+
+.no-overflow {
+    overflow: hidden;
 }
