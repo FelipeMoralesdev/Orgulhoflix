@@ -42,6 +42,7 @@ h3 {
 #data-movie {
     width: 80vw;
     height: 70vh;
+    max-width: 1000px;
     background-color: #191818c9;
     position: fixed;
     top: 50%;
@@ -71,6 +72,10 @@ h3 {
     background-color: #19181896;
     padding-right: 24px;
     font-size: 19px;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .movie-resume {
@@ -97,8 +102,9 @@ h3 {
 
     #data-movie {
         width: 100%;
-        /*height: auto;*/
+        height: auto;
         left: 0;
+        top: 38%;
     }
 
     .movie {
@@ -158,8 +164,15 @@ movie-resume-md {
         display: block;
         margin-left: 15px;
         margin-right: 15px;
-        margin-top: -17px;
+        margin-top: 0;
         background-color: #19181896;
+        padding-top: 5px;
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+
+    #movie-resume-sm {
+        text-align: justify;
     }
 
     .movie-wrapper {
@@ -170,3 +183,11 @@ movie-resume-md {
         display: none;
     }
 }
+
+
+@media (min-width: 1200px) {
+    .movie {
+        width: 25%;
+    }
+}
+
