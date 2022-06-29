@@ -48,13 +48,6 @@ h3 {
     transform: translateY(-50%);
 }
 
-@media only screen and (max-width: 767px) {
-    #data-movie {
-        height: 10px !important;
-    }
-}
-
-
 .close-btn-wrapper {
     display: flex;
     justify-content: end;
@@ -96,9 +89,16 @@ h3 {
     .main-title {
         margin-bottom: 0;
     }
+
     .sub-title {
         font-size: 1.2rem;
         margin-top: 14px;
+    }
+
+    #data-movie {
+        width: 100%;
+        /*height: auto;*/
+        left: 0;
     }
 
     .movie {
@@ -111,6 +111,21 @@ h3 {
     .movie img {
         max-width: 100%;
         height: auto;
+    }
+
+    .movie-image {
+        width: 50%;
+    }
+
+    .movie-image img {
+        width: 100%;
+        max-width: 290px;
+        height: 100%;
+    }
+
+    .movie-infos {
+        width: 50%;
+        font-size: 15px;
     }
 
     .busca-e-selecoes {
@@ -128,5 +143,30 @@ h3 {
 
     #buscaNome {
         margin-left: 10px;
+    }
+}
+
+movie-resume-md {
+    display: block;
+}
+.movie-sm-mobile-resume {
+    display: none;
+}
+
+@media (max-width: 479px) {
+    .movie-sm-mobile-resume {
+        display: block;
+        margin-left: 15px;
+        margin-right: 15px;
+        margin-top: -17px;
+        background-color: #19181896;
+    }
+
+    .movie-wrapper {
+        padding-bottom: 0;
+    }
+
+    .movie-resume-md {
+        display: none;
     }
 }

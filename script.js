@@ -77,6 +77,7 @@ function mostrarInfos (film) {
   dataInfos.children[3].innerHTML = ("<b>Ano: </b>" + film.ano);
   dataInfos.children[4].innerHTML = ("<b>Nota: </b>" + film.nota);
   dataInfos.children[5].innerHTML = ("<b>Sinopse: </b>" + film.sinopse);
+  document.getElementById('movie-resume-sm').innerHTML = ("<b>Sinopse: </b>" + film.sinopse);
 
   dataWrapper.classList.remove('hide-data');
   document.getElementsByTagName('body')[0].style.overflow = "hidden";
