@@ -12,6 +12,10 @@ h2 {
     height: 200;
 }
 
+#capas {
+    margin-top: 24px;
+}
+
 .busca-e-selecoes {
     display: flex;
     align-items: baseline;
@@ -43,6 +47,13 @@ h3 {
     top: 50%;
     transform: translateY(-50%);
 }
+
+@media only screen and (max-width: 767px) {
+    #data-movie {
+        height: 10px !important;
+    }
+}
+
 
 .close-btn-wrapper {
     display: flex;
@@ -79,4 +90,43 @@ h3 {
 
 .no-overflow {
     overflow: hidden;
+}
+
+@media (max-width: 912px) {
+    .main-title {
+        margin-bottom: 0;
+    }
+    .sub-title {
+        font-size: 1.2rem;
+        margin-top: 14px;
+    }
+
+    .movie {
+        padding-left: 4px;
+        padding-right: 4px;
+        width: 33.33%;
+        box-sizing: border-box;
+    }
+    
+    .movie img {
+        max-width: 100%;
+        height: auto;
+    }
+
+    .busca-e-selecoes {
+        justify-content: start;
+    }
+
+    .busca-e-selecoes h4 {
+        margin-top: 0;
+        margin-bottom: 0;
+    }
+
+    .busca-e-selecoes .busca-tema {
+        margin-top: 14px;
+    }
+
+    #buscaNome {
+        margin-left: 10px;
+    }
 }

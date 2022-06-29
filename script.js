@@ -82,7 +82,7 @@ function mostrarInfos (film) {
   document.getElementsByTagName('body')[0].style.overflow = "hidden";
 }
 
-let closeBtn = document.getElementById('close-button');
+var closeBtn = document.getElementById('close-button');
 closeBtn.addEventListener('click', esconderInfos );
 
 function esconderInfos() {
