@@ -123,7 +123,6 @@ function filterValues () {
       values.push(listValues[j].getAttribute('id'));
     }
   }
-  console.log(values);
 
   if(values.length <= 0) {
     restartShow();
@@ -134,13 +133,13 @@ function filterValues () {
 
 function showFiltered(values) {
   restartShow();
+  console.log('valores:  ' + values);
   document.getElementById('capas').classList.add('capas-filtered');
+
   for(let j = 0; j < filmesObjeto.length; j++) {
     for(let x = 0; x < values.length; x++) {
       if((filmesObjeto[j].getAttribute('data-tag').search(values[x])) == -1) {
         filmesObjeto[j].classList.add("movie-hide");
-      } else {
-        filmesObjeto[j].classList.remove("movie-hide");
       }
     }
   }
@@ -151,3 +150,9 @@ function restartShow() {
     filmesObjeto[j].classList.remove("movie-hide");
   }
 }
+
+/*===== Search =====*/
+var inputSearch = document.getElementById('buscaNome');
+inputSearch.addEventListener('input', function() {
+  console.log('teste');
+});
