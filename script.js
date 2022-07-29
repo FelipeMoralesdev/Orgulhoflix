@@ -151,8 +151,20 @@ function restartShow() {
   }
 }
 
-/*===== Search =====*/
-var inputSearch = document.getElementById('buscaNome');
-inputSearch.addEventListener('input', function() {
-  console.log('teste');
-});
+//===== text filter ======
+var input = document.getElementById('buscaNome');
+function textFilter() {
+  let text = input.value;
+  text = text.toLowerCase();
+
+  for(let j = 0; j < filmesObjeto.length; j++) {
+    filmesObjeto[j].classList.add("movie-hide");
+  }
+
+  for(let j = 0; j < listaFilmes.length; j++) {
+    let compare = listaFilmes[j].nome.toLowerCase();
+    if(compare.includes(text)) {
+      filmesObjeto[j].classList.remove("movie-hide");
+    }
+  }
+}
